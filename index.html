@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Escola - Educação de Qualidade</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            
+        }
+    
+    header {
+        background-color: #293377;
+        color: white;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-right: right; /* Mover o logo para a esquerda */
+        
+    }
+    
+    nav {
+        display: flex;
+    }
+    
+    .menu {
+        list-style: none;
+        display: flex;
+        margin-right: 100px; /* Adicionei uma margem esquerda para mover o menu para a esquerda */
+    }
+
+    .menu a {
+        text-decoration: none;
+        letter-spacing: 5px;
+        font-family: 'Helvetica Neue Medium', sans-serif;
+        color: #f5f1f1;
+        font-size: 18px;
+    }
+
+    .menu li {
+        position: relative;
+        margin: 0 15px;
+        cursor: pointer; /* Adiciona cursor pointer para indicar que é clicável */
+        list-style: none;
+        display: flex;
+        margin-left: 20; /* Adiciona uma margem esquerda para mover o menu para a esquerda */
+        
+    }
+    
+    .menu-item:hover .submenu {
+        display: block;
+    }
+
+    .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: rgba(252, 246, 246, 0.5);
+        padding: 10px;
+        box-shadow: 0 0 30px rgba(252, 251, 251, 0);
+        z-index: 2;
+        color: rgb(7, 7, 7);
+        transition: opacity 0.3s, visibility 0.3s, height 0.3s;
+        transition: background-color 0.3s; /* Adiciona transição para o efeito de destaque */
+    }
+    
+    .submenu li:hover {
+        background-color: #FFDc0a; /* Cor de destaque quando passa o mouse sobre o item do submenu */
+    }
+
+    .submenu.active {
+        display: block;
+    }
+
+    .submenu li {
+        margin: 5px 0;
+    }
+    
+    .video-section {
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    video {
+        width: 100%;
+    }
+
+    .mission-section {
+        text-align: center;
+        margin: 20px 0;
+    }
+    
+    .section-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    
+    .title-line {
+        flex-grow: 1;
+        height: 3px; /* Tamanho do risco */
+        background-color: #293377; /* Cor azul */
+        margin: 0 10px;
+    }
+    
+    p {
+        font-family: 'Helvetica Neue', sans-serif;
+        font-weight: 300; /* Light */
+        color: #293377; /* Cor azul */
+        margin: 10px 0;
+    }
+    
+    h2 {
+        font-family: 'Helvetica Neue', sans-serif;
+        font-weight: 300; /* Light */
+        color: #293377; /* Cor azul */
+        font-size: 1.5em; /* Tamanho do título */
+    }
+    
+    .subtitle {
+        margin-bottom: 20px;
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 20px; /* Espaçamento entre o texto e a imagem */
+    }
+    
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .saiba-mais-button {
+        background-color: #293377; /* Cor de fundo */
+        color: #ffffff; /* Cor do texto */
+        padding: 10px 20px; /* Espaçamento interno */
+        border: none; /* Remove a borda */
+        border-radius: 5px; /* Borda arredondada */
+        cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+        display: block; /* Torna o botão um bloco para centralizar */
+        margin: 20px auto; /* Centraliza o botão e adiciona margem */
+    }
+
+    .saiba-mais-buttona {
+        display: inline-block;
+        background-color: yellow;
+        color: #293377; /* Set the text color to blue */
+        padding: 10px 20px;
+        text-decoration: none;
+        margin-top: 20px; /* Adjust the margin as needed */
+    }
+
+    .image-side {
+        margin-top: 20px; /* Adjust the margin as needed */
+    }
+
+    .icon-item img {
+        width: 50px; /* Set the width of the icons as needed */
+        height: 50px; /* Set the height of the icons as needed */
+    }
+
+
+
+    .yellow-section {
+        background-color: yellow;
+        padding: 20px 0; /* Adicione um preenchimento para espaçamento interno */
+    }
+
+    .yellow-text {
+        color: #FFDC0A; /* Set the text color to yellow */
+        font-size: 16px;
+    }
+
+    .icon-description {
+        font-size: 14px; /* Adjust the font size as needed */
+        text-align: center;
+        margin-bottom: 20px; /* Adicione um espaçamento inferior para separar os ícones */
+    }
+
+    .icon {
+        display: inline-block;
+        margin-bottom: 10px; /* Adicione um espaçamento inferior entre o ícone e a descrição */
+    }
+
+    .icon img {
+        width: 64px; /* Ajuste o tamanho do ícone conforme necessário */
+        height: 64px;
+    }
+
+    .icon-item {
+        text-align: center;
+    }
+
+    .icon-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 20px; /* Adjust the margin as needed */
+    }
+    
+    p {
+        font-family: 'Helvetica Neue', sans-serif;
+        font-weight: 300; /* Light */
+        color: #293377; /* Cor azul */
+        font-size: 1.5em; /* Tamanho do título */
+    }
+
+    /* Adicione esses estilos no seu arquivo styles.css */
+.blue-section {
+        background-color: #3498db; /* Cor azul da faixa */
+        color: #ffffff; /* Cor do texto */
+        padding: 40px 0; /* Adicione espaçamento interno */
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between; /* Optional: Adjust the spacing between icons */
+        max-width: 1200px;
+        margin: 0 auto;
+        overflow: hidden; /* Clearfix para conter flutuações internas */
+    }
+
+    .content {
+        float: left;
+        width: 60%; /* Largura do conteúdo com a descrição */
+    }
+
+    .image-side {
+        margin-top: 20px; /* Adjust the margin as needed */
+        margin-right: 20px; /* Adjust the negative margin-right to move the image to the left */
+        float: right;
+        width: 40%; /* Largura da imagem */
+        text-align: center;
+    }
+
+    .image-side img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    h2, h3 {
+        margin-bottom: 10px;
+    }
+
+    .icon-container {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+
+    .icon-item {
+        text-align: center;
+    }
+
+    .icon-item img {
+        width: 64px; /* Ajuste o tamanho do ícone conforme necessário */
+        height: 64px;
+    }
+
+    .content-section {
+        background-color: #293377; /* Set the background color to blue */
+        color: #FFDc0a(255, 255, 255)55, 255, 255; /* Set the text color to white */
+        padding: 20px; /* Add padding for better spacing */
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .icon-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 20px; /* Adjust the margin as needed */
+    }
+
+    .icon-item {
+        text-align: center;
+    }
+
+    .carousel-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+        margin-top: 20px; /* Adjust the margin-top as needed */
+    }
+
+    .carousel-nav span {
+        font-size: 24px; /* Adjust the font size as needed */
+        cursor: pointer;
+        color: #FFDc0a; /* Set the color to yellow */
+        margin: 0 10px; /* Adjust the margin between arrows as needed */
+    }
+
+    .section-container {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .image-container {
+        position: relative;
+        width: 100%;
+        max-width: 600px; /* Set the maximum width of the image container */
+        margin: 0 auto; /* Center the image container */
+    }
+
+    .icon-overlay {
+        position: absolute;
+        top: 10px; /* Adjust the top position of the icon */
+        left: 10px; /* Adjust the left position of the icon */
+        width: 50px; /* Set the width of the icon */
+        height: 50px; /* Set the height of the icon */
+        /* Add your icon styles here */
+    }
+
+    .text-below-image {
+        text-align: center;
+    }
+
+    .title-subtitle-text {
+        max-width: 400px; /* Set the maximum width of the text container */
+        margin: 0 auto; /* Center the text container */
+    }
+
+    .icons-below {
+        text-align: center;
+        margin-top: 20px; /* Adjust the margin as needed */
+    }
+
+    .logo {
+        float: right;
+        width: 100px; /* Set the width of the logo */
+        height: auto;
+        margin-top: 20px; /* Adjust the margin as needed */
+    }
+
+    .saiba-mais-button {
+        display: block;
+        margin: 30px auto; /* Adjust the margin as needed */
+        padding: 10px 20px;
+        background-color: #FFDC0A; /* Yellow color */
+        color: #000; /* Black text color */
+        text-decoration: none;
+        text-align: center;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .footer {
+        background-color: #293377;
+        padding: 20px;
+        color: white;
+        text-align: center;
+    }
+
+    .logo {
+        width: 50px; /* Adjust the width of the logo as needed */
+        height: auto;
+        margin-right: 10px; /* Adjust the margin as needed */
+        vertical-align: middle;
+    }
+
+    .description {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .separator {
+        border-top: 1px solid white;
+        margin: 20px 0;
+    }
+
+    .menu-container {
+        display: flex;
+        justify-content: space-around;
+        margin: 20px 0;
+    }
+
+    .menu {
+        flex: 1;
+        padding: 0 10px;
+    }
+
+    .icon-container {
+        display: flex;
+        justify-content: space-around;
+        margin: 20px 0;
+    }
+
+    .icon-item {
+        text-align: center;
+    }
+
+    .address {
+        margin: 20px 0;
+    }
+
+    .reserved {
+        margin-top: 20px;
+    }
+
+    @media screen and (max-width: 768px) {
+        header {
+            flex-direction: column; /* Altera o layout do cabeçalho para coluna */
+        }
+    
+        .menu {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .submenu {
+            position: static; /* Remove a posição absoluta do submenu */
+            display: none; /* Esconde o submenu por padrão */
+        }
+    
+        .menu li {
+            margin: 10px 0;
+        }
+    
+        .video-section {
+            height: auto; /* Permite que o vídeo tenha altura automática */
+        }
+    }
+    
+    /* Estilos para telas menores (como celulares) */
+    @media screen and (max-width: 480px) {
+        .logo {
+            font-size: 1.2em; /* Reduz o tamanho da fonte do logo */
+        }
+    
+        .menu {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .menu li {
+            margin: 10px 0;
+        }
+    
+        .title-line {
+            height: 2px; /* Reduz a altura do risco */
+            margin: 0 5px;
+        }
+    
+        p {
+            font-size: 1.2em; /* Reduz o tamanho do texto */
+        }
+    
+        h2 {
+            font-size: 1.2em; /* Reduz o tamanho do título */
+        }
+    
+        .saiba-mais-button {
+            font-size: 1em; /* Reduz o tamanho do botão */
+        }
+    }
+    
+    
+    
+    
+   </style>
+   
+    
+
+    <!-- Header -->
+    <header>
+        <div class="logo"></div>
+        <img src="logo_colegio-removebg-preview (1).png" alt="Nossa Missão">
+        <nav>
+            <ul class="menu">
+                <li class="menu-item">
+                    <a href="#">Quem Somos</a>
+                    <!-- Submenu para Quem Somos -->
+                    <ul class="submenu">
+                        <li><a href="#">Historia</a></li>
+                        <li><a href="#">Pilares e Valores</a></li>
+                        <li><a href="#">Estrutura</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="#">Ensinos</a>
+                    <!-- Submenu para Ensinos -->
+                    <ul class="submenu">
+                        <li><a href="#">Educação Infantil</a></li>
+                        <li><a href="#">Ensino Fundamental</a></li>
+                        <li><a href="#">Ensino medio</a></li>
+                        <li><a href="#">Programa Bilíngue</a></li>
+                    </ul>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="#">Contato</a>
+                    <!-- Submenu para Contato -->
+                    <ul class="submenu">
+                        <li><a href="#">Atendimento</a></li>
+                        <li><a href="#">Canal Direto</a></li>
+                        <li><a href="#">Agenda uma visita</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+<script>
+    // Adicione o seguinte script JavaScript
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Selecione todos os itens do menu e submenu
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        // Adicione um ouvinte de evento para cada item do menu
+        menuItems.forEach(function (menuItem) {
+            const submenu = menuItem.querySelector('.submenu');
+
+            menuItem.addEventListener('mouseenter', function () {
+                // Adicione uma classe de destaque quando o mouse entra
+                menuItem.classList.add('highlight');
+                submenu.classList.add('active');
+            });
+
+            menuItem.addEventListener('mouseleave', function () {
+                // Remova a classe de destaque quando o mouse sai
+                menuItem.classList.remove('highlight');
+                submenu.classList.remove('active');
+            });
+        });
+    });
+</script>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <video src="Video banner.mp4" autoplay loop muted></video>
+    </section>
+
+    <!-- Nossa Missão Section -->
+    <section class="mission-section">
+        <div class="section-header">
+            <div class="title-line"></div>
+            <p>SOBRE NÓS</p>
+            <div class="title-line"></div>
+        </div>
+        <div class="subtitle">
+            <h2>Quem somos</h2>
+        </div>
+        <img src="colegio.png" alt="Nossa Missão">
+        <p>Desde 1905 somos uma escola que mantém uma tradição de ensino de alta qualidade que nos diferencia das outras da cidade e região. 
+            Nossos alunos recebem não apenas uma educação sólida, mas também são incentivados a serem cidadãos ativos e positivos em nossa sociedade.
+            Contamos com um rico capital intelectual de professores excepcionalmente qualificados e experientes, que demonstram o compromisso contínuo com a sua própria atualização na área educacional e desenvolvimento pessoal.
+            
+            
+            <a href="#" class="saiba-mais-link">Saiba Mais</a>
+        </p>
+    </section>
+
+    <section class="yellow-section">
+        <div class="container">
+            <div class="icon-description">
+                <div class="icon">
+                    <img src="noun-graduation-6258164-removebg-preview.png" alt="Ícone 1">
+                </div>
+                <p>Educação de qualidade desde 1906</p>
+            </div>
+            <div class="icon-description">
+                <div class="icon">
+                    <img src="noun-student-6258153-removebg-preview.png" alt="Ícone 2">
+                </div>
+                <p>Valores Cristãos</p>
+            </div>
+            <div class="icon-description">
+                <div class="icon">
+                    <img src="noun-calendar-6258163-removebg-preview.png" alt="Ícone 3">
+                </div>
+                <p>Desenvolvimento Integral</p>
+            </div>
+            <div class="icon-description">
+                <div class="icon">
+                    <img src="noun-medal-6258173-removebg-preview.png" alt="Ícone 4">
+                </div>
+                <p>Formação de Vencedores</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Título, Subtítulo, Texto, Ícones, Imagem e Botão -->
+    <section class="content-section">
+        <div class="container">
+            <div>
+                <h2 class="yellow-text">Níveis de Ensino</h2>
+                <h1 class="yellow-text">Educação Infantil</h1>
+                <p class="yellow-text">Nosso compromisso com o ensino de qualidade inicia-se na Educação Infantil, sendo a primeira etapa da Educação Básica. para promover o desenvolvimento integral de nossos alunos, desde pequenos, contamos com material didático completo.</p>
+    
+                <!-- Ícones com descrição -->
+                <div class="icon-container">
+                    <div class="icon-item">
+                        <img src="icone1.png" alt="Ícone 1">
+                        <p>Descrição do Ícone 1</p>
+                    </div>
+                    <div class="icon-item">
+                        <img src="icone2.png" alt="Ícone 2">
+                        <p>Descrição do Ícone 2</p>
+                    </div>
+                </div>
+    
+                <!-- Botão "Saiba Mais" contornado em amarelo -->
+                <a href="#" class="saiba-mais-buttona">Saiba Mais</a>
+            </div>
+    
+            <!-- Imagem ao lado do texto -->
+            <div class="image-side right-image">
+                <img src="educacao infantil corrigido1.png" alt="Imagem ao lado do texto" >
+            </div>
+        </div>
+    </section>
+    
+    <section class="content-section">
+        <div class="container">
+            <!-- ... (rest of your content) ... -->
+    
+            <!-- Setas para navegação no carrossel -->
+            <div class="carousel-nav">
+                <span class="prev"></span>
+                <span class="next"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-container">
+        <div class="image-container">
+            <img src="educacao infantil corrigido1.png" alt="Your Image" style="width: 300px; height: auto;">
+
+            <div class="icon-overlay">
+                <img src="your-icon.png" alt="Icon">
+            </div>
+        </div>
+        <div class="text-below-image">
+            <p>Your Text Below Image</p>
+        </div>
+        <div class="title-subtitle-text">
+            <h2>NIVEIS DE ENSINO</h2>
+            <h3>Programa Bilíngue</h3>
+            <p>Criado para transformar o ensino-aprendizado de inglês das escolas, o StandFor Evolution é um programa de carga horária estendida que proporciona as criancas e aos adolecentes o estudo ea vivêsncia de uma segunda lìngua, tornando-os cidadoes bilíngues e aptos para interagir e ir além.</p>
+        </div>
+        <div class="icons-below">
+            <img src="icon1.png" alt="Icon 1">
+            <img src="icon2.png" alt="Icon 2">
+        </div>
+        <img src="your-logo.png" alt="Logo" class="logo">
+        <a href="#" class="saiba-mais-button">Saiba Mais</a>
+    </section>
+
+    <section class="section-container">
+        <div class="image-container">
+            <img src="Natacao menino corrigido.png" alt="Your Image" style="width: 300px; height: auto;">
+
+            <div class="icon-overlay">
+                <img src="your-icon.png" alt="Icon">
+            </div>
+        </div>
+        <div class="text-below-image">
+            <p>Your Text Below Image</p>
+        </div>
+        <div class="title-subtitle-text">
+            <h2>NIVEIS DE ENSINO</h2>
+            <h3>Programa Bilíngue</h3>
+            <p>Criado para transformar o ensino-aprendizado de inglês das escolas, o StandFor Evolution é um programa de carga horária estendida que proporciona as criancas e aos adolecentes o estudo ea vivêsncia de uma segunda lìngua, tornando-os cidadoes bilíngues e aptos para interagir e ir além.</p>
+        </div>
+        <div class="icons-below">
+            <img src="icon1.png" alt="Icon 1">
+            <img src="icon2.png" alt="Icon 2">
+        </div>
+        <img src="your-logo.png" alt="Logo" class="logo">
+        <a href="#" class="saiba-mais-button">Saiba Mais</a>
+    </section>
+    
+    
+    
+
+</head>
+<body>
+
+<footer class="footer">
+    <div>
+        <img src="your-logo.png" alt="Logo" class="logo">
+        <h2 class="description">Your Description</h2>
+    </div>
+    <div class="separator"></div>
+    <div class="menu-container">
+        <div class="menu">
+            <p>Sobre nós</p>
+            <p>Ensino</p>
+            <p>Contato</p>
+        </div>
+    </div>
+    <div class="separator"></div>
+    <div class="icon-container">
+        <div class="icon-item">
+            <img src="icon1.png" alt="Icon 1" style="width: 50px; height: 50px;">
+            <p>Description 1</p>
+        </div>
+        <div class="icon-item">
+            <img src="icon2.png" alt="Icon 2" style="width: 50px; height: 50px;">
+            <p>Description 2</p>
+        </div>
+        <div class="icon-item">
+            <img src="icon3.png" alt="Icon 3" style="width: 50px; height: 50px;">
+            <p>Description 3</p>
+        </div>
+        <div class="icon-item">
+            <img src="icon4.png" alt="Icon 4" style="width: 50px; height: 50px;">
+            <p>Description 4</p>
+        </div>
+    </div>
+    <div class="separator"></div>
+    <div class="description">
+        <p>More Description Below Icons</p>
+    </div>
+    <div class="separator"></div>
+    <div class="address">
+        <p>Endereço: Your Address</p>
+        <p>Telefone: Your Phone Number</p>
+    </div>
+    <div class="reserved">
+        <p>&copy; 2023 Your Company. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
+
+    <script src="scripts.js"></script>
+</body>
+</html>
